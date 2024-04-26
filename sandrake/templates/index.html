@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sandra's Web App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body style="background-image: url('static/sandrabackground.png'); background-size: cover; background-repeat: no-repeat;">
+
+    <div class="container">
+        <h1>Welcome to Sandra's Web App</h1>
+        
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <form action="https://www.google.com/search" method="get" target="_blank">
+                <input type="text" name="q" placeholder="Search the web...">
+                <input type="submit" value="Search">
+            </form>
+        </div>
+        
+        <!-- Upload File -->
+        <div class="upload-section">
+            <h2>Upload a File</h2>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="file">
+                <br><br>
+                <input type="submit" value="Upload File">
+            </form>
+        </div>
+        <!-- Text-to-Speech Button -->
+        <button id="speakButton">Speak</button>
+        <div class="fitness-icon">
+            <a href="https://www.picktime.com/register"><img src="{{ url_for('static', filename='icon fitness.png') }}" alt="Fitness Booking"></a>
+            <span class="icon-text">Fittness App</span>
+        </div>
+        <div class="audiobooks-icon">
+            <span class="icon-text">AudioBook App</span>
+            <a href="https://www.audiobooks.com/browse"><img src="{{ url_for('static', filename='audiobook.png') }}" alt="Fitness Booking"></a>
+        </div>
+        <div class="whatsapp-icon">
+            <a href="https://www.chitchat.gg/"><img src="{{ url_for('static', filename='whatsapp.jpg') }}" alt="Fitness Booking"></a>
+            <span class="icon-text">Messages</span>
+        </div>
+        
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
